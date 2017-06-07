@@ -1,10 +1,14 @@
 var mongoose = require("mongoose");
 
 var BlogPost = new mongoose.Schema({
-	text:String,
-	date: Date,
+	post:String,
+	date:{
+		month:String,
+		day:String,
+		year:String
+	}
 	title: String,
-	author: String
+	user: String
 });
 
-module.exports = mongoose.model("Post", BlogPost)
+module.exports = mongoose.model("BlogPost", BlogPost);

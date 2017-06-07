@@ -1,5 +1,5 @@
 {
-	"index":"/index",
+	"index":"/",
 	"create":"/create",
 	"update":"/update",
 	"delete":"/delete"
