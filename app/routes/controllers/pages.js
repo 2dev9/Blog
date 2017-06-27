@@ -6,16 +6,24 @@ var pages = {
 		res.render("home");
 	},
 	index: function(req, res) {
-		BlogPost.find({"user": req.user.username}, function(err, post){
-			if(err){
-				console.log(err);
-			}else{
-				res.render("index", {
-					status: req.query.status,
-					posts:post
-				});
-			}
-		});
+		if(req.user){
+			BlogPost.find({"user": req.user.username}, function(err, post){
+				if(err){
+					console.log(err);
+				}else{
+					res.render("index", {
+						status: req.query.status,
+						posts:post
+					});
+				}
+			});
+		}else{
+			res.render("index", {
+				status: false,
+				posts: {}
+			});
+		}
+
 		
 	},
 	login: function(req, res){

@@ -6,8 +6,9 @@ var express = require("express"),
 	mongoose = require("mongoose"),
 	bodyParser = require("body-parser"),
 	app = express(),
-	path = require("path")
-	routes = require("./app/routes/routes");
+	path = require("path"),
+	routes = require("./app/routes/routes"),
+	methodOverride = require("method-override");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -22,6 +23,8 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true
 }));
+
+app.use(methodOverride('_method'));
 
 app.use(passport.initialize());
 app.use(passport.session());

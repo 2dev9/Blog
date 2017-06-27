@@ -1,5 +1,8 @@
 {
 	"index":"/",
+	"post":"/post",
+	"signup":"/signup",
+	"login":"/login",
 	"create":"/create",
 	"update":"/update",
 	"delete":"/delete"

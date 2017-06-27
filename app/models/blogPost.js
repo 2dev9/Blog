@@ -6,7 +6,7 @@ var BlogPost = new mongoose.Schema({
 		month:String,
 		day:String,
 		year:String
-	}
+	},
 	title: String,
 	user: String
 });

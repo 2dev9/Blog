@@ -42,10 +42,10 @@ var blogPages = {
 var createBlogPost = function(req, res){
 	var today = today();
 	new BlogPost({
-		title = req.body.blogTitle,
-		post = req.body.postBody,
-		user = req.body.username,
-		date = {
+		title : req.body.blogTitle,
+		post : req.body.postBody,
+		user : req.body.username,
+		date : {
 			month:today.month,
 			day:today.day,
 			year:today.year
@@ -72,7 +72,7 @@ function updateBlogPost(req,res){
 
 function deletedBlogPost(req, res){
 	BlogPost.remove({"_id": req.query.post}, function(err, post){
-		if(){
+		if(err){
 			console.log(err);
 		}else{
 			res.redirect("/index");
