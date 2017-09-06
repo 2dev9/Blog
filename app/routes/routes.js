@@ -1,5 +1,4 @@
-var r = require("./routes.json"),
-	passport = require("passport");
+var r = require("./routes.json");
 
 var controllers = {
 	pages: require("./controllers/pages"),
@@ -7,7 +6,7 @@ var controllers = {
 	blogCtrl: require("./controllers/blogControl")
 };
 
-module.exports = function(app){
+module.exports = function(app, passport){
 	//static routes
 	//app.get(r.home, controllers.pages.home);
 	app.get(r.index, controllers.pages.index);

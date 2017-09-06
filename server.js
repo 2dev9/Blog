@@ -7,6 +7,7 @@ var express = require("express"),
 	bodyParser = require("body-parser"),
 	app = express(),
 	path = require("path"),
+	localAuth = require("./app/auth/passport-local"),
 	routes = require("./app/routes/routes"),
 	methodOverride = require("method-override");
 
@@ -29,7 +30,9 @@ app.use(methodOverride('_method'));
 app.use(passport.initialize());
 app.use(passport.session());
 
-routes(app);
+localAuth(passport);
+routes(app, passport);
 
+mongoose.connect("")
 app.listen(8080);
 console.log("El servidor esta trabajando");

@@ -32,9 +32,9 @@ var pages = {
 	signup: function(req, res){
 		auth({
 			name:req.body.username,
-			pass: res.body.password,
+			pass: req.body.password,
 			first: req.body.firstName,
-			last: req.body.lasyName
+			last: req.body.lastName
 		}, function(data){
 			if(data.success){
 				res.json({

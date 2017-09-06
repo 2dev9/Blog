@@ -11,7 +11,7 @@ module.exports = function(passport){
 		done(null, id);
 	});
 
-	passport.use("local login", new LocalStrategy({
+	passport.use("local-login", new LocalStrategy({
 		usernameField:"username",
 		passportField:"password",
 		pasReqToCallback: true
